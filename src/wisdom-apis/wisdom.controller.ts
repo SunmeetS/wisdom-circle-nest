@@ -15,7 +15,7 @@ export class WisdomController {
     return this.wisdomService.addUser(userData);
   }
 
-  @Post('updatePassword')
+  @Patch('updatePassword')
   updatePassword(@Body() userDetails: any) {
     return this.wisdomService.updatePassword(userDetails);
   }
