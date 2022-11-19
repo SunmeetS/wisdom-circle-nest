@@ -20,4 +20,16 @@ export class WisdomService {
     const addedUser = new this.userModel(userDetails);
     return addedUser.save();
   }
+
+  async updatePassword(userDetails: any): Promise<any> {
+    const updatedUser = this.userModel.findOneAndUpdate(
+      {
+        email: userDetails.email,
+      },
+      {
+        password: userDetails.password,
+      },
+    );
+    return updatedUser;
+  }
 }

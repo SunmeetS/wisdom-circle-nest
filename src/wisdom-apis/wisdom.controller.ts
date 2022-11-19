@@ -1,9 +1,9 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Patch, Post } from '@nestjs/common';
 import { WisdomService } from './wisdom.service';
 
 @Controller()
 export class WisdomController {
-  constructor(private readonly wisdomService: WisdomService) {}
+  constructor(private readonly wisdomService: WisdomService) { }
 
   @Get(':emailId')
   getUser(@Param() email: any) {
@@ -13,5 +13,10 @@ export class WisdomController {
   @Post('addUser')
   addUser(@Body() userData: any) {
     return this.wisdomService.addUser(userData);
+  }
+
+  @Patch('updatePassword')
+  updatePassword(@Body() userDetails: any) {
+    return this.wisdomService.updatePassword(userDetails);
   }
 }
