@@ -3,7 +3,7 @@ import { WisdomService } from './wisdom.service';
 
 @Controller()
 export class WisdomController {
-  constructor(private readonly wisdomService: WisdomService) { }
+  constructor(private readonly wisdomService: WisdomService) {}
 
   @Get(':emailId')
   getUser(@Param() email: any) {
