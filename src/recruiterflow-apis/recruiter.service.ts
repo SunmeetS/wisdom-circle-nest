@@ -10,12 +10,18 @@ export class RecruiterService {
     private recruiterModel: Model<RecruiterDocument>,
     @InjectConnection() private connection: Connection,
   ) {}
-
+  '';
   async sendData() {
     return this.recruiterModel.find().exec();
   }
 
-  async addData(data) {
-    this.recruiterModel.insertMany(data);
+  async addData() {
+    return this.recruiterModel.insertMany({ data: 'New Card' });
+  }
+
+  async deleteData(id) {
+    console.log(
+      (await this.recruiterModel.deleteOne({ _id: id })).deletedCount,
+    );
   }
 }

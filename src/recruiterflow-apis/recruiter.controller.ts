@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { RecruiterDocument } from './recruiter.schema';
 import { RecruiterService } from './recruiter.service';
 
@@ -12,7 +12,13 @@ export class RecruiterController {
   }
 
   @Post('recruiter/post-recruiter-flow-data')
-  addData(@Body() data: RecruiterDocument) {
-    return this.recruiterService.addData(data);
+  addData() {
+    return this.recruiterService.addData();
+  }
+
+  @Delete('recruiter/delete-recruiter-flow-data/:id')
+  deleteData(@Param('id') id: string) {
+    console.log(id)
+    return this.recruiterService.deleteData(id);
   }
 }
