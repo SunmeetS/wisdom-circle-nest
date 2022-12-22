@@ -17,4 +17,4 @@ import { RecruiterService } from './recruiter.service';
   exports: [RecruiterService],
   providers: [RecruiterService],
 })
-export class WisdomModule {}
+export class RecruiterModule {}

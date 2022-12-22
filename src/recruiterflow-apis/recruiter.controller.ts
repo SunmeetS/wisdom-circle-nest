@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Patch, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { RecruiterDocument } from './recruiter.schema';
 import { RecruiterService } from './recruiter.service';
 
@@ -6,12 +6,12 @@ import { RecruiterService } from './recruiter.service';
 export class RecruiterController {
   constructor(private readonly recruiterService: RecruiterService) {}
 
-  @Get('get-recruiter-flow-data')
+  @Get('recruiter/get-recruiter-flow-data')
   sendData() {
     return this.recruiterService.sendData();
   }
 
-  @Post('post-recruiter-flow-data')
+  @Post('recruiter/post-recruiter-flow-data')
   addData(@Body() data: RecruiterDocument) {
     return this.recruiterService.addData(data);
   }

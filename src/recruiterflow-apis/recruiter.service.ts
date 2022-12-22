@@ -12,7 +12,7 @@ export class RecruiterService {
   ) {}
 
   async sendData() {
-    return this.recruiterModel.find({});
+    return this.recruiterModel.find().exec();
   }
 
   async addData(data) {
