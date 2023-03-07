@@ -13,7 +13,7 @@ import { GameModule } from './svc-apis/svg.module';
         uri: 'mongodb+srv://sunmeet:sunmeet@cluster0.zqxxfuf.mongodb.net/?retryWrites=true&w=majority',
       }),
     }),
-    GameModule
+    GameModule,
   ],
   controllers: [AppController],
   providers: [AppService],

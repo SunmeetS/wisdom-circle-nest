@@ -28,4 +28,8 @@ export class GameService {
   async delete(id: string): Promise<Game> {
     return this.gameModel.findByIdAndDelete(id).exec();
   }
+
+  async deleteAll(): Promise<any> {
+    return this.gameModel.deleteMany({}).exec()
+  }
 }
